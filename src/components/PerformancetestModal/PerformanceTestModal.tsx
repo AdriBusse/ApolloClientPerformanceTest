@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 
 type Props = {
-    children: React.Component
+    children: any
 }
 const PerformanceTestModal = ({ children }: Props) => {
     const [showModal, setShowModal] = useState(false)
