@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 type Props = {
     children: React.Component
 }
-const PerformanceTestButton = ({ children }: Props) => {
+const PerformanceTestModal = ({ children }: Props) => {
     const [showModal, setShowModal] = useState(false)
 
     return (
@@ -43,4 +43,4 @@ const PerformanceTestButton = ({ children }: Props) => {
     )
 }
 
-export default PerformanceTestButton
+export default PerformanceTestModal

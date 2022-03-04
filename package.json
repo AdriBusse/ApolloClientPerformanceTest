@@ -1,6 +1,6 @@
 {
   "name": "apollo_client_performance_test",
-  "version": "1.0.4",
+  "version": "1.0.41",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
