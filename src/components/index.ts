@@ -1,3 +1,2 @@
-export { default as Button } from "./Button";
-export { default as PerfromanceTest } from "./PerformanceTest";
-export { default as PerfromanceTestModal } from "./PerformancetestModal";
+export { default as PerformanceTest } from "./PerformanceTest";
+export { default as PerformanceTestModal } from "./PerformancetestModal";

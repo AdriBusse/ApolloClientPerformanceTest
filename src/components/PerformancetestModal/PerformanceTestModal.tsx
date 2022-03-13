@@ -9,8 +9,14 @@ const PerformanceTestModal = ({ children }: Props) => {
 
     return (
         <div>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+                integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+                crossOrigin="anonymous"
+            ></link>
             <div onClick={() => setShowModal(!showModal)} className="fixed flex items-center justify-center w-12 h-12 bg-blue-500 rounded-full cursor-pointer right-3 bottom-3">
-                <i className="text-white fas fa-tachometer-alt" />
+                <i className="text-white fas fa-tachometer-alt h-4 w-4" />
             </div>
             {showModal &&
                 <div
@@ -29,9 +35,10 @@ const PerformanceTestModal = ({ children }: Props) => {
                             <div className="items-center px-4 py-3">
                                 <button
                                     id="ok-btn"
+                                    onClick={() => setShowModal(false)}
                                     className="w-full px-4 py-2 text-base font-medium text-white bg-green-500 rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
                                 >
-                                    OK
+                                    Close
                                 </button>
                             </div>
                         </div>

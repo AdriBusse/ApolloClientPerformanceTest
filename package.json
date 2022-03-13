@@ -1,17 +1,27 @@
 {
   "name": "apollo_client_performance_test",
-  "version": "1.0.47",
+  "version": "1.0.62",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "keywords": [
+    "apollo",
+    "react",
+    "graphql",
+    "client",
+    "performance",
+    "testing",
+    "react-apollo",
+    "react"
+  ],
+  "homepage": "https://github.com/AdriBusse/apollo_client_performance_test",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
   "scripts": {
     "rollup": "rollup -c",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "deploy": "npm run rollup && npm publish"
   },
   "author": "Adrian Busse",
   "license": "ISC",
@@ -20,20 +30,11 @@
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
-    "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-interactions": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
-    "@storybook/builder-webpack5": "^6.4.19",
-    "@storybook/manager-webpack5": "^6.4.19",
-    "@storybook/react": "^6.4.19",
-    "@storybook/testing-library": "0.0.9",
     "@types/file-saver": "^2.0.5",
     "@types/react": "^17.0.39",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "postcss": "^8.4.7",
-    "react": "^17.0.2",
     "rollup": "^2.69.0",
     "rollup-plugin-dts": "^4.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -41,7 +42,13 @@
     "rollup-plugin-terser": "^7.0.2",
     "tailwindcss": "^3.0.23",
     "tslib": "^2.3.1",
-    "typescript": "^4.6.2",
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {
     "@apollo/client": "^3.5.10",
     "file-saver": "^2.0.5"
   }

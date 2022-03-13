@@ -14,15 +14,22 @@ interface Props {
     client: ApolloClient<NormalizedCacheObject>
 }
 const PerformanceTest = ({ client, n, query, title, fileName, withCache, variables }: Props) => {
+    const TIMEPERFORMANCETEST = "Time for Performancetest"
+
     const [canDownload, setCanDownload] = useState(false)
 
-    function Sleep(milliseconds: number) {
-        console.log("in sleep");
-        return new Promise(resolve => setTimeout(resolve, milliseconds));
+
+    function orderEntries(pe: PerformanceEntry[], name: string) {
+        const overalltime = performance.getEntriesByType("measure").filter(entry => entry.name === TIMEPERFORMANCETEST)
+        const entries = performance.getEntriesByType("measure").filter(entry => entry.name != TIMEPERFORMANCETEST)
+        const performanceResult = [...overalltime, ...entries]
+        return performanceResult
     }
 
     const download = async () => {
-        const data = JSON.stringify(performance.getEntriesByType("measure"))
+        const performanceResult = orderEntries(performance.getEntriesByType("measure"), TIMEPERFORMANCETEST)
+
+        const data = JSON.stringify(performanceResult)
         const blob = new Blob([data], { type: "application/json" });
         FileSaver.saveAs(blob, fileName);
         performance.clearMarks();
@@ -54,7 +61,7 @@ const PerformanceTest = ({ client, n, query, title, fileName, withCache, variabl
 
     return (
         <div className="flex flex-col p-1">
-            <h1 className="text-center">{title}:</h1>
+            <h1 className="text-base text-center text-black">{title}:</h1>
             <div className="flex flex-row justify-center p-1 ">
                 <button className="py-1 mr-2 leading-4 md:block lg:w-32 blue button" onClick={() => fetchQuery()}>Start</button>
                 <button className="py-1 mr-2 leading-4 md:block lg:w-32 blue button" disabled={!canDownload} onClick={() => download()}>Download JSOn</button>
