@@ -48,7 +48,7 @@ const PerformanceTest = ({ client, n, query, title, fileName, withCache, variabl
                 console.log(data);
             })
             performance.mark("finnish")
-            performance.measure(`${i}: Time for Request with log at end`, "start", "finnish")
+            performance.measure(`${i}: Time for Request`, "start", "finnish")
             performance.clearMarks("start")
             performance.clearMarks("finnish")
         }
